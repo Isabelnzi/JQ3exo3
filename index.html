@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercice3</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" id="value"></input>
+      <button type="button" name="button" id="try">Check</button>
+      <p></p>
+    </form>
+    <script src="jquery-3.2.1.js"></script>
+  <script>
+  var rand = Math.trunc(Math.random() * 100)+1;
+  var tryNum = 0;
+  var reg = /^[\d\/]+$/;
+$('#try').click(function() {
+  var value = $('#value').val();
+     tryNum++;
+  if(reg.test(value) && reg.test(rand))
+{
+  if(value == rand) {
+    $('p').text('Nice !' );
+  } else if(value < rand) {
+    $('p').text('More');
+  } else {
+    $('p').text('Less');
+  }
+}else {
+  alert('Please enter a valid number')
+}
+}
+);
+</script>
+  </body>
+</html>
